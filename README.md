@@ -50,12 +50,12 @@ readState('stateName').someCustomProperty
 
 #### Listening For Changes
 
-System uses event dispatchers and React reducers for manually forcing re-rendering component who uses that stae value.
+System uses event dispatchers and React reducers for manually forcing re-rendering component which uses that state value.
 
 So every component needs to useSubscribe method.
 This method also returns single or multiple objects with, their values.
 
-##### useSubscriber(...fields)
+##### useSubscribe(...fields)
 
 Listens for changes and Returns state values
 
