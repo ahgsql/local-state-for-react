@@ -1,28 +1,38 @@
-# local-state
+# local-state-for-react
 
 > localStorage for State Management
 
-[![NPM](https://img.shields.io/npm/v/local-state.svg)](https://www.npmjs.com/package/local-state) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/local-state-for-react.svg)](https://www.npmjs.com/package/local-state-for-react) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Install
 
 ```bash
-npm install --save local-state
+npm install --save local-state-for-react
 ```
 
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
-
-import MyComponent from 'local-state'
-import 'local-state/dist/index.css'
-
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
+import { writeState, freshState, useSubscribe } from 'local-state-for-react'
+freshState({ input1: 1 })
+const App = () => {
+  const input1 = useSubscribe('input1')
+  return (
+    <div>
+      <h2>Hi From Local-State Package!</h2>
+      <h1>{input1}</h1>
+      <button
+        onClick={() => {
+          writeState('input1', input1 + 1)
+        }}
+      >
+        Click To Change State!
+      </button>
+    </div>
+  )
 }
+
+export default App
 ```
 
 ## License

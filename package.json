@@ -1,10 +1,10 @@
 {
-  "name": "local-state",
-  "version": "1.0.0",
-  "description": "localStorage for State Management",
+  "name": "local-state-for-react",
+  "version": "1.1.3",
+  "description": "localStorage for State Management in React",
   "author": "ahgsql",
   "license": "MIT",
-  "repository": "ahgsql/localState",
+  "repository": "ahgsql/local-state-for-react",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.js",
@@ -23,9 +23,7 @@
     "predeploy": "cd example && yarn install && yarn run build",
     "deploy": "gh-pages -d example/build"
   },
-  "peerDependencies": {
-    "react": "^16.0.0"
-  },
+ 
   "devDependencies": {
     "microbundle-crl": "^0.13.10",
     "babel-eslint": "^10.0.3",
