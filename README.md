@@ -7,7 +7,66 @@
 ## Install
 
 ```bash
-npm install --save local-state-for-react
+npm install  local-state-for-react
+```
+
+or
+
+```bash
+yarn add  local-state-for-react
+```
+
+## Methods
+
+#### Determining Default State
+
+##### freshState(initial)
+
+Initializes state with default values.
+This function needs to be called outside of component function.
+
+```jsx
+freshState({ input1: 1 })
+```
+
+&nbsp;
+
+#### Writing To State
+
+##### writeState(path,value)
+
+Writes state value on given path
+&nbsp;
+
+#### Getting Data From State
+
+##### readState(path)
+
+Returns state value
+
+```javascript
+readState('stateName').someCustomProperty
+```
+
+#### Listening For Changes
+
+System uses event dispatchers and React reducers for manually forcing re-rendering component who uses that stae value.
+
+So every component needs to useSubscribe method.
+This method also returns single or multiple objects with, their values.
+
+##### useSubscriber(...fields)
+
+Listens for changes and Returns state values
+
+```javascript
+const input1 = useSubscribe('input1')
+```
+
+or
+
+```javascript
+const { name, email } = useSubscribe('name', 'email')
 ```
 
 ## Usage
